@@ -1,0 +1,12 @@
+{
+    "name": "omnipaste",
+    "description": "Effortlessly paste text across multiple AI language model platforms.", 
+    "version": "1.0.3",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting", "storage"],
+    "host_permissions": ["https://chatgpt.com/*", "https://claude.ai/*", "https://groq.com/*",  "https://chat.deepseek.com/*", "https://gemini.google.com/*", "https://chat.mistral.ai/chat/*"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon48.png"
+    }
+}
