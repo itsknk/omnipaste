@@ -1,22 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OmniPaste</title>
-  <link rel="stylesheet" href="popup.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniPaste</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            width: 380px;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            color: #333333;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #8e2de2;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            resize: vertical;
+            font-size: 16px;
+            min-height: 120px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #00b894;
+            box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.2);
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        #paste-btn {
+            background-color: #00b894;
+            color: white;
+            flex-grow: 2;
+            margin-right: 10px;
+        }
+        #paste-btn:hover {
+            background-color: #00a386;
+            box-shadow: 0 4px 8px rgba(0, 184, 148, 0.3);
+        }
+        #clear-btn {
+            background-color: #ff7675;
+            color: white;
+            flex-grow: 1;
+        }
+        #clear-btn:hover {
+            background-color: #e66767;
+            box-shadow: 0 4px 8px rgba(255, 118, 117, 0.3);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>OmniPaste</h1>
-    <textarea id="input-text" placeholder="Enter text to paste"></textarea>
-    <div class="button-container">
-      <button id="paste-btn" class="button"><i class="fas fa-paste"></i> Paste</button>
-      <button id="clear-btn" class="button"><i class="fas fa-trash-alt"></i> Clear</button>
+    <div class="card">
+        <h1>OmniPaste</h1>
+        <textarea id="input-text" placeholder="Enter text to paste across LLM platforms..."></textarea>
+        <div class="button-container">
+            <button id="paste-btn">Paste All</button>
+            <button id="clear-btn">Clear</button>
+        </div>
     </div>
-  </div>
-  <script src="popup.js" defer></script>
+    <div class="footer">
+        Effortlessly paste across multiple LLM platforms
+    </div>
+    <script src="popup.js"></script>
 </body>
 </html>
